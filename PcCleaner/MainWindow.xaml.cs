@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,9 +18,67 @@ namespace PcCleaner
     /// </summary>
     public partial class MainWindow : Window
     {
+        public DirectoryInfo winTemp;
+        public DirectoryInfo appTemp;
+
         public MainWindow()
         {
             InitializeComponent();
+            winTemp = new DirectoryInfo(@"C:\Windows\Temp");
+            appTemp = new DirectoryInfo(System.IO.Path.GetTempPath());
+        }
+
+        //Calcul de la taille d'un dossier
+        public long DirSize(DirectoryInfo dir)
+        {
+            long size = 0;
+            try
+            {
+                FileInfo[] files = dir.GetFiles();
+                foreach (FileInfo file in files)
+                {
+                    size += file.Length;
+                }
+                DirectoryInfo[] dirs = dir.GetDirectories();
+                foreach (DirectoryInfo subdir in dirs)
+                {
+                    size += DirSize(subdir);
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                // Ignorer les fichiers et dossiers protégés
+            }
+            return size;
+        }
+
+        //Vider un dossier
+        public void ClearTempData(DirectoryInfo di)
+        {
+            foreach (FileInfo file in di.GetFiles())
+            {
+                try
+                {
+                    file.Delete();
+                    Console.WriteLine(file.FullName);
+                }
+                catch (Exception ex) {
+                    continue;
+                }
+            }
+
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                try
+                {
+                    dir.Delete(true);
+                    Console.WriteLine(dir.FullName);
+                }
+                catch (Exception ex)
+                {
+                    continue;
+                }
+            }
         }
 
         private void Button_Clean_Click(object sender, RoutedEventArgs e)
@@ -50,6 +109,30 @@ namespace PcCleaner
                 Console.WriteLine("Erreur : " + ex.Message);
             }
 
+        }
+
+        private void Button_Analyse_Click(object sender, RoutedEventArgs e)
+        {
+            AnalyseFolders();
+        }
+
+        public void AnalyseFolders()
+        {
+            Console.WriteLine("Début de l'analyse...");
+            long totalSize = 0;
+
+            try 
+            {
+                totalSize += DirSize(winTemp) / 1000000;
+                totalSize += DirSize(appTemp) / 1000000;
+            } catch (Exception ex)
+            {
+                Console.WriteLine("Impossible d'analyser les dossiers : " + ex.Message);
+            }
+
+
+            espace.Content = totalSize + " Mb";
+            date.Content = DateTime.Today;
         }
     }
 }

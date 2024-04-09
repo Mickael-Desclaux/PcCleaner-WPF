@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PcCleaner"
         mc:Ignorable="d"
         x:Name="fenetre"
-        Title="PC Cleaner" Height="700" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/clean.png">
+        Title="PC Cleaner" Height="700" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Icons/clean.png">
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="201" Stroke="#00000000" VerticalAlignment="Top" Width="1000" Fill="#FF05676F" StrokeThickness="0"/>
         <!-- Titre -->
@@ -21,7 +21,7 @@
         <Label x:Name="espace" Content="??? Mb" HorizontalAlignment="Left" Margin="212,75,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Dubai Light" FontSize="22"/>
 
         <!-- Bouton Analyse -->
-        <Button Content="Analyse" HorizontalAlignment="Left" Margin="702,61,0,0" VerticalAlignment="Top" Height="98" Width="253" Background="#00000000" BorderThickness="4,4,4,4" Foreground="White" BorderBrush="White" FontFamily="Dubai" FontSize="30"/>
+        <Button Content="Analyse" HorizontalAlignment="Left" Margin="702,61,0,0" VerticalAlignment="Top" Height="98" Width="253" Background="#00000000" BorderThickness="4,4,4,4" Foreground="White" BorderBrush="White" FontFamily="Dubai" FontSize="30" Click="Button_Analyse_Click"/>
 
         <!-- Bandeau -->
         <Rectangle HorizontalAlignment="Center" Height="13" Stroke="#00000000" VerticalAlignment="Top" Width="1000" Fill="#FFD5E8EA" Margin="0,200,0,0" StrokeMiterLimit="0" StrokeThickness="0"/>
@@ -31,10 +31,10 @@
         <Button Content="&#xD;&#xA;Mise à jour" HorizontalAlignment="Left" Margin="152,409,0,0" VerticalAlignment="Top" Height="160" Width="300" Background="#FF05676F" BorderThickness="0,0,0,0" Foreground="White" BorderBrush="White" FontFamily="Dubai" FontSize="30" Click="Button_Update_Click"/>
         <Button Content="&#xD;&#xA;Historique" HorizontalAlignment="Left" Margin="564,230,0,0" VerticalAlignment="Top" Height="160" Width="300" Background="#FF05676F" BorderThickness="0,0,0,0" Foreground="White" BorderBrush="White" FontFamily="Dubai" FontSize="30" Click="Button_History_Click"/>
         <Button Content="&#xD;&#xA;Ma page GitHub" HorizontalAlignment="Left" Margin="564,409,0,0" VerticalAlignment="Top" Height="160" Width="300" Background="#FF05676F" BorderThickness="0,0,0,0" Foreground="White" BorderBrush="White" FontFamily="Dubai" FontSize="30" Click="Button_Website_Click"/>
-        <Image HorizontalAlignment="Left" Height="67" Margin="268,252,0,0" VerticalAlignment="Top" Width="84" Source="/broom.png" IsHitTestVisible="False"/>
-        <Image HorizontalAlignment="Left" Height="67" Margin="680,252,0,0" VerticalAlignment="Top" Width="84" Source="/history.png" IsHitTestVisible="False"/>
-        <Image HorizontalAlignment="Left" Height="67" Margin="680,422,0,0" VerticalAlignment="Top" Width="84" Source="/github (1).png" IsHitTestVisible="False"/>
-        <Image HorizontalAlignment="Left" Height="67" Margin="268,422,0,0" VerticalAlignment="Top" Width="84" Source="/updated.png" IsHitTestVisible="False"/>
+        <Image HorizontalAlignment="Left" Height="67" Margin="268,252,0,0" VerticalAlignment="Top" Width="84" Source="Icons/broom.png" IsHitTestVisible="False"/>
+        <Image HorizontalAlignment="Left" Height="67" Margin="680,252,0,0" VerticalAlignment="Top" Width="84" Source="Icons/history.png" IsHitTestVisible="False"/>
+        <Image HorizontalAlignment="Left" Height="67" Margin="680,422,0,0" VerticalAlignment="Top" Width="84" Source="Icons/github (1).png" IsHitTestVisible="False"/>
+        <Image HorizontalAlignment="Left" Height="67" Margin="268,422,0,0" VerticalAlignment="Top" Width="84" Source="Icons/updated.png" IsHitTestVisible="False"/>
         <!-- Footer -->
         <Rectangle Stroke="#00000000" Width="1000" Fill="#FF05676F" Margin="0,594,0,0" StrokeThickness="0"/>
         <Label Content="Copyright 2024 - Mickaël Desclaux-Arramond" VerticalAlignment="Top" Foreground="White" FontFamily="Dubai" FontSize="22" Width="442" Height="42" HorizontalAlignment="Center" Margin="0,598,0,0"/>

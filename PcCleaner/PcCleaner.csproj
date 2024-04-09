@@ -6,34 +6,36 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="broom.png" />
-    <None Remove="clean.png" />
-    <None Remove="github %281%29.png" />
+    <None Remove="app.manifest" />
     <None Remove="github.png" />
-    <None Remove="history.png" />
-    <None Remove="updated.png" />
     <None Remove="world-wide-web.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="broom.png">
+    <Resource Include="app.manifest" />
+    <Resource Include="Icons\broom.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="clean.png">
+    <Resource Include="Icons\clean.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="github (1).png" />
-    <Resource Include="github.png" />
-    <Resource Include="history.png">
+    <Resource Include="Icons\github %281%29.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="updated.png">
+    <Resource Include="Icons\github.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="world-wide-web.png">
+    <Resource Include="Icons\history.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\updated.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\world-wide-web.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
