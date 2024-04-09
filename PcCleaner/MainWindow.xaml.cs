@@ -83,7 +83,31 @@ namespace PcCleaner
 
         private void Button_Clean_Click(object sender, RoutedEventArgs e)
         {
+            Console.WriteLine("Nettoyage en cours ...");
+            btnClean.Content = "\nNettoyage en cours";
 
+            Clipboard.Clear();
+
+            try
+            {
+                ClearTempData(winTemp);
+            } catch (Exception ex)
+            {
+                Console.WriteLine("Erreur : " + ex.Message); ;
+            }
+
+            try
+            {
+                ClearTempData(appTemp);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur : " + ex.Message); ;
+            }
+
+            btnClean.Content = "\nNettoyage effectué !";
+            titre.Content = "Nettoyage effectué !";
+            espace.Content = "0 Mb";
         }
 
         private void Button_History_Click(object sender, RoutedEventArgs e)
@@ -116,6 +140,7 @@ namespace PcCleaner
             AnalyseFolders();
         }
 
+        //Analyse de la taille des dossiers et fichiers à supprimer
         public void AnalyseFolders()
         {
             Console.WriteLine("Début de l'analyse...");
@@ -132,6 +157,7 @@ namespace PcCleaner
 
 
             espace.Content = totalSize + " Mb";
+            titre.Content = "Analyze effectué !";
             date.Content = DateTime.Today;
         }
     }

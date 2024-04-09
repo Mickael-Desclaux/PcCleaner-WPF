@@ -27,7 +27,7 @@
         <Rectangle HorizontalAlignment="Center" Height="13" Stroke="#00000000" VerticalAlignment="Top" Width="1000" Fill="#FFD5E8EA" Margin="0,200,0,0" StrokeMiterLimit="0" StrokeThickness="0"/>
 
         <!-- Content -->
-        <Button Content="&#xD;&#xA;Nettoyer" HorizontalAlignment="Left" Margin="152,230,0,0" VerticalAlignment="Top" Height="160" Width="300" Background="#FF05676F" BorderThickness="0,0,0,0" Foreground="White" BorderBrush="White" FontFamily="Dubai" FontSize="30" Click="Button_Clean_Click"/>
+        <Button x:Name="btnClean" Content="&#xD;&#xA;Nettoyer" HorizontalAlignment="Left" Margin="152,230,0,0" VerticalAlignment="Top" Height="160" Width="300" Background="#FF05676F" BorderThickness="0,0,0,0" Foreground="White" BorderBrush="White" FontFamily="Dubai" FontSize="30" Click="Button_Clean_Click"/>
         <Button Content="&#xD;&#xA;Mise à jour" HorizontalAlignment="Left" Margin="152,409,0,0" VerticalAlignment="Top" Height="160" Width="300" Background="#FF05676F" BorderThickness="0,0,0,0" Foreground="White" BorderBrush="White" FontFamily="Dubai" FontSize="30" Click="Button_Update_Click"/>
         <Button Content="&#xD;&#xA;Historique" HorizontalAlignment="Left" Margin="564,230,0,0" VerticalAlignment="Top" Height="160" Width="300" Background="#FF05676F" BorderThickness="0,0,0,0" Foreground="White" BorderBrush="White" FontFamily="Dubai" FontSize="30" Click="Button_History_Click"/>
         <Button Content="&#xD;&#xA;Ma page GitHub" HorizontalAlignment="Left" Margin="564,409,0,0" VerticalAlignment="Top" Height="160" Width="300" Background="#FF05676F" BorderThickness="0,0,0,0" Foreground="White" BorderBrush="White" FontFamily="Dubai" FontSize="30" Click="Button_Website_Click"/>
